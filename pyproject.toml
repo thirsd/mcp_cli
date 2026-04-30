@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-cli"
+version = "0.1.0"
+description = "A universal CLI proxy for MCP (Model Context Protocol) services"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = [
+    "fastmcp>=2.0.0",
+    "pydantic>=2.0.0",
+]
+
+[project.scripts]
+mcp-cli = "mcp_cli.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mcp_cli"]
+
+[tool.uv]
+index-url = "https://pypi.tuna.tsinghua.edu.cn/simple"

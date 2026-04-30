@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/tmp"],
+      "transport": "stdio",
+      "env": {}
+    },
+    "sse-api": {
+      "transport": "sse",
+      "url": "http://localhost:8000/sse",
+      "headers": {
+        "Authorization": "Bearer token"
+      }
+    },
+    "http-api": {
+      "transport": "http",
+      "url": "http://localhost:8000/mcp",
+      "headers": {
+        "Authorization": "Bearer token"
+      }
+    },
+    "mcp-test": {
+      "transport": "http",
+      "url": "http://127.0.0.1:9000/mcp"
+    }
+  }
+}
